@@ -1,0 +1,67 @@
+/* Circular microphone button with interactive styling */
+.mic-button {
+  width: clamp(5rem, 5vw, 12rem);
+  height: clamp(5rem, 5vw, 12rem);
+  border-radius: 50%;
+  background-color: #17defe;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+}
+
+/* Hover and active state effects */
+.mic-button:hover {
+  transform: scale(1.05);
+  background-color: #0ecfef;
+  box-shadow: 0 0.75rem 1.5rem rgba(0, 0, 0, 0.3);
+}
+
+.mic-button:active {
+  transform: scale(0.95);
+  background-color: #0bbfd9;
+}
+
+/* Active listening state with pulsing animation */
+.mic-button.listening {
+  background-color: #ff4b4b;
+  animation: pulse 1.5s infinite;
+}
+
+/* Pulsing animation for active listening state */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 75, 75, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 2vw rgba(255, 75, 75, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 75, 75, 0);
+  }
+}
+
+/* Microphone icon sizing */
+.mic-button img {
+  width: clamp(2.5rem, 3vw, 6rem);
+  height: clamp(2.5rem, 3vw, 6rem);
+}
+
+/* Instructional text below button */
+.mic-button-text {
+  margin-top: 1rem;
+  font-size: clamp(1rem, 1.5vw, 2.5rem);
+  color: #CCCBCB;
+  padding: 0 1rem;
+  text-align: center;
+  word-break: break-word;
+}
+
+/* Error message styling with warning color */
+.mic-error-text {
+  color: #ff4b4b;
+  font-weight: 600;
+}

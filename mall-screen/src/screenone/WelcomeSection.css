@@ -1,0 +1,81 @@
+/* Layout: Primary section structure with 20/80 height split */
+.welcome-header-section {
+  height: 20%;
+  min-height: 9.375rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 0 min(5%, 3rem);
+}
+
+/* Content container with vertical scrolling disabled */
+.content-area {
+  height: 80%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding-top: 3vh;
+  gap: 4vh;
+  width: 100%;
+}
+
+/* Heading with responsive font sizing and gradient text effect */
+.welcome-heading {
+  font-size: clamp(1.8rem, min(5vh, 5vw), 15rem);
+  background: linear-gradient(90deg, #ffffff, #e0e7ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin-bottom: 1vh;
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+  text-align: center;
+  max-width: 90%;
+}
+
+/* Responsive divider with glow effect */
+.divider-line { 
+  width: 100%;
+  max-width: min(90%, 70rem);
+  height: clamp(1rem, 1.5rem, 2rem);
+  background: white; 
+  border-radius: 1rem; 
+  box-shadow: 0 0 15px rgba(118, 117, 232, 0.8); 
+  transform-origin: center;
+} 
+
+/* Subtitle with responsive sizing and custom border effect */
+.welcome-section-subtitle {
+  font-size: clamp(1.2rem, min(2vh, 2vw), 7rem);
+  color: #ffffff;
+  text-align: center;
+  margin-top: 1.5vh;
+  max-width: 90%;
+  line-height: 1.4;
+  font-weight: 400;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+  padding: 1rem 6rem;
+  border-radius: 6rem;
+  position: relative;
+  z-index: 0;
+}
+
+/* Gradient border effect using mask technique */
+.welcome-section-subtitle::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 0.5rem; 
+  background: linear-gradient(to bottom, #7675e8, #101731);
+  -webkit-mask: 
+    linear-gradient(#000 0 0) content-box, 
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  z-index: -1;
+}

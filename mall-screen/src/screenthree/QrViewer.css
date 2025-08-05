@@ -1,0 +1,15 @@
+.qr-viewer {
+  min-height: calc(100vh - 60px);
+  padding: 2rem;
+  color: white;
+}
+
+.qr-viewer h1 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.qr-viewer p {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}

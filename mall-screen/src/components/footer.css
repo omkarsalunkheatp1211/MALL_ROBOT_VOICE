@@ -1,0 +1,57 @@
+/* footer.css */
+
+/* 
+ * Footer Button Styling
+ * Defines the circular navigation buttons in the footer
+ */
+.footer-btn {
+  /* Make buttons perfectly circular */
+  aspect-ratio: 1/1;
+  height: 98%;
+  
+  /* Center content */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  /* Styling */
+  border-radius: 50%;
+  border: 1px solid transparent;
+  background-color: white;
+  padding: 0;
+  margin: 0 0.5rem;
+  
+  /* Transitions for effects */
+  transition:
+    border 0.2s ease,
+    background-color 0.2s ease,
+    transform 0.1s ease;
+  
+  /* Ensure proper sizing */
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+/* Add left margin to first button for spacing */
+.footer-btn:first-child {
+  margin-left: 1rem;
+}
+
+/* Hover state styling */
+.footer-btn:hover {
+  border-color: #374151;
+  border-width: 2px;
+}
+
+/* Active state styling */
+.footer-btn:active {
+  background-color: #D1D5DB;
+  transform: scale(0.95);
+}
+
+/* Icon sizing within buttons */
+.footer-icon {
+  width: 60%;
+  height: 60%;
+  object-fit: contain;
+}

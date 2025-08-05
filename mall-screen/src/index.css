@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import "tailwindcss/preflight";
+@import "tailwindcss/utilities";
+
+/* Global viewport configuration */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  color: white;
+}
+
+/* Cross-browser scrollbar hiding */
+::-webkit-scrollbar {
+  height: 0;
+  width: 0;
+}
+
+* {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

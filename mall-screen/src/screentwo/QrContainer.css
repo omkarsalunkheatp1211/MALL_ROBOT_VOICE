@@ -1,0 +1,381 @@
+/* Horizontal divider with consistent styling */
+.divider-line {
+  width: 8rem;
+  height: 0.094rem;
+  background-color: white;
+  margin-bottom: 1rem;
+}
+
+/* Subtitle with gradient border effect */
+.welcome-subtitle {
+  font-size: 0.875rem;
+  padding: 0.5rem 1rem;
+  max-width: 28rem;
+  color: #fff;
+  border-radius: 0.75rem;
+  position: relative;
+  z-index: 0;
+}
+
+/* Gradient border created with pseudo-element and mask */
+.welcome-subtitle::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 0.094rem;
+  background: linear-gradient(to bottom, #7675e8, #101731);
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Full-screen modal overlay with blur effect */
+.qr-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  backdrop-filter: blur(5px);
+}
+
+.qr-code-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  background-color: white;
+  border-radius: 1rem;
+  margin: 1.5rem 0;
+  min-height: 200px;
+  min-width: 200px;
+}
+
+.qr-scanned-message {
+  text-align: center;
+  color: #22c55e;
+  animation: fadeIn 0.5s ease-in;
+}
+
+.qr-scanned-message h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Modal content container with dark theme */
+.qr-modal-content {
+  background-color: #1a2542;
+  border-radius: 1rem;
+  width: 90%;
+  max-width: 400px;
+  padding: 1.5rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Modal header with shop name and close button */
+.qr-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+/* QR code container with white background for contrast */
+.qr-code-container {
+  background-color: white;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  margin: 1rem 0;
+}
+
+/* Responsive styles for different screen sizes */
+@media (min-width: 3000px) or (min-height: 3500px) {
+
+  /* Ultra-large screen optimizations */
+  .qr-modal-content {
+    max-width: clamp(800px, 20vw, 1200px);
+    padding: clamp(2rem, 3vw, 4rem);
+    border-radius: clamp(1.5rem, 2vw, 3rem);
+    border-width: 4px;
+  }
+
+  /* Scaled typography and spacing for large displays */
+  .qr-modal-header h3 {
+    font-size: clamp(2.5rem, 3vw, 4rem);
+  }
+
+  .qr-code-image {
+    width: clamp(300px, 15vw, 600px);
+    height: clamp(300px, 15vw, 600px);
+  }
+}
+
+/* QR Viewer responsive styles for different screen sizes */
+.qr-viewer-container {
+  transition: all 0.3s ease;
+}
+
+/* Large screen optimizations */
+@media (min-width: 3000px) or (min-height: 2000px) {
+  .large-screen .qr-viewer-container {
+    max-width: 800px;
+    padding: 2rem;
+    border-radius: 1.5rem;
+    border-width: 3px;
+  }
+
+  /* Scaled typography and spacing */
+  .large-screen .qr-viewer-title {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+  }
+}
+
+.qr-code-image {
+  display: block;
+  width: 200px;
+  height: 200px;
+}
+
+.qr-content-info {
+  width: 100%;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.qr-address {
+  color: white;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.qr-message {
+  color: #a0aec0;
+  font-size: 0.875rem;
+  margin-bottom: 1rem;
+}
+
+.qr-header-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.qr-countdown {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #1a2542;
+  background-color: #f0f0f0;
+  padding: 4px 8px;
+  border-radius: 4px;
+  min-width: 50px;
+  text-align: center;
+}
+
+/* Add responsive styles for ultra-large screens */
+@media (min-width: 3000px) or (min-height: 3500px) {
+  .qr-modal-content {
+    max-width: clamp(800px, 20vw, 1200px);
+    padding: clamp(2rem, 3vw, 4rem);
+    border-radius: clamp(1.5rem, 2vw, 3rem);
+    border-width: 4px;
+  }
+
+  .qr-modal-header h3 {
+    font-size: clamp(2.5rem, 3vw, 4rem);
+  }
+
+  .qr-close-button {
+    width: clamp(3rem, 4vw, 5rem);
+    height: clamp(3rem, 4vw, 5rem);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .qr-close-button img {
+    width: clamp(1.5rem, 2vw, 2.5rem);
+    height: clamp(1.5rem, 2vw, 2.5rem);
+  }
+
+  .qr-code-container {
+    padding: clamp(1.5rem, 2vw, 3rem);
+    border-radius: clamp(0.75rem, 1vw, 1.5rem);
+    margin: clamp(1.5rem, 2vw, 3rem) 0;
+  }
+
+  .qr-code-image {
+    width: clamp(300px, 15vw, 600px);
+    height: clamp(300px, 15vw, 600px);
+  }
+
+  .qr-modal-content p {
+    font-size: clamp(1.5rem, 2vw, 2.5rem);
+    max-width: 80%;
+    line-height: 1.4;
+    margin-top: clamp(1rem, 1.5vw, 2rem);
+  }
+
+  .qr-countdown {
+    font-size: clamp(1.5rem, 2vw, 2.5rem);
+    padding: clamp(0.5rem, 0.8vw, 1rem) clamp(1rem, 1.5vw, 2rem);
+    min-width: clamp(80px, 5vw, 120px);
+    border-radius: clamp(0.5rem, 0.7vw, 1rem);
+  }
+
+  .qr-header-right {
+    gap: clamp(1rem, 1.5vw, 2rem);
+  }
+}
+
+/* Specific styles for 8400px × 3600px screens */
+@media (min-width: 8000px) or (min-height: 3400px) {
+  .qr-modal-content {
+    max-width: clamp(1800px, 35vw, 2400px);
+    padding: clamp(4rem, 5vw, 8rem);
+    border-radius: clamp(2rem, 3vw, 4rem);
+  }
+
+  .qr-modal-header h3 {
+    font-size: clamp(5rem, 6vw, 8rem);
+  }
+
+  /* Add these styles for the close button */
+  .qr-close-button {
+    width: clamp(8rem, 10vw, 12rem);
+    height: clamp(8rem, 10vw, 12rem);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .qr-close-button img {
+    width: clamp(4rem, 5vw, 6rem);
+    height: clamp(4rem, 5vw, 6rem);
+  }
+
+  .qr-code-image {
+    width: clamp(800px, 25vw, 1200px);
+    height: clamp(800px, 25vw, 1200px);
+  }
+
+  .qr-code-container {
+    padding: clamp(3rem, 4vw, 5rem);
+    border-radius: clamp(1.5rem, 2vw, 3rem);
+    margin: clamp(3rem, 4vw, 5rem) 0;
+  }
+
+  .qr-modal-content p {
+    font-size: clamp(3.5rem, 4vw, 5rem);
+    margin-top: clamp(2rem, 3vw, 4rem);
+  }
+
+  .qr-countdown {
+    font-size: clamp(3.5rem, 4vw, 5rem);
+    padding: clamp(1.2rem, 1.5vw, 2rem) clamp(2rem, 3vw, 4rem);
+    min-width: clamp(180px, 12vw, 240px);
+  }
+}
+
+/* QR Viewer responsive styles */
+.qr-viewer-container {
+  transition: all 0.3s ease;
+}
+
+/* Large screens */
+@media (min-width: 3000px) or (min-height: 2000px) {
+  .large-screen .qr-viewer-container {
+    max-width: 800px;
+    padding: 2rem;
+    border-radius: 1.5rem;
+    border-width: 3px;
+  }
+
+  .large-screen .qr-viewer-title {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+  }
+
+  .large-screen .qr-viewer-section {
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-radius: 1rem;
+  }
+
+  .large-screen .qr-viewer-label {
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .large-screen .qr-viewer-content {
+    font-size: 2rem;
+    line-height: 1.4;
+  }
+
+  .large-screen .qr-viewer-error {
+    font-size: 2rem;
+    padding: 1.5rem;
+  }
+}
+
+/* Ultra-large screens (8400px × 3600px) */
+@media (min-width: 8000px) or (min-height: 3400px) {
+  .ultra-large-screen .qr-viewer-container {
+    max-width: 1600px;
+    padding: 4rem;
+    border-radius: 3rem;
+    border-width: 6px;
+  }
+
+  .ultra-large-screen .qr-viewer-title {
+    font-size: 6rem;
+    margin-bottom: 4rem;
+  }
+
+  .ultra-large-screen .qr-viewer-section {
+    padding: 3rem;
+    margin-bottom: 3rem;
+    border-radius: 2rem;
+  }
+
+  .ultra-large-screen .qr-viewer-label {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .ultra-large-screen .qr-viewer-content {
+    font-size: 4rem;
+    line-height: 1.4;
+  }
+
+  .ultra-large-screen .qr-viewer-error {
+    font-size: 4rem;
+    padding: 3rem;
+  }
+}
