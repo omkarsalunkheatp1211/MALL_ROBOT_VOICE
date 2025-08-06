@@ -1,18 +1,10 @@
 [build]
-  # Specify the directory to build from
-  base = "mall-screen"
-  
-  # Build command
-  command = "npm run build"
-  
-  # Publish directory (where the built files will be)
-  publish = "dist"
+  publish = "mall-screen/dist"
+  command = "cd mall-screen && npm install && npm run build"
 
 [build.environment]
-  # Set Node.js version
-  NODE_VERSION = "18"
+  VITE_API_URL = "https://sanhri-test-1.onrender.com"
 
-# Handle client-side routing
 [[redirects]]
   from = "/*"
   to = "/index.html"

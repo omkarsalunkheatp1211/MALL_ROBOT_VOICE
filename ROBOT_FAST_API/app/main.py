@@ -25,7 +25,8 @@ app.add_middleware(
     CORSMiddleware,
     allow_origins=[
         "http://localhost:5173",      # local frontend
-        # "https://admin.sanhri.com"    # production frontend
+        "https://ai-mall.netlify.app",  # production frontend (Netlify)
+        "https://sanhri-test-1.onrender.com"  # production backend (Render)
     ],
     allow_credentials=True,
     allow_methods=["*"],
