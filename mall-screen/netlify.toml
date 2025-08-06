@@ -3,7 +3,7 @@
   command = "npm install && npm run build"
 
 [build.environment]
-  REACT_APP_API_URL = "https://sanhri-test-1.onrender.com"
+  VITE_API_URL = "https://sanhri-test-1.onrender.com"
 
 [[redirects]]
   from = "/*"
