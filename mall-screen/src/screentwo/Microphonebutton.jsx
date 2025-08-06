@@ -355,7 +355,7 @@ import "./Microphonebutton.css";
  * @param {function} props.onResponse - Callback function to handle API response (optional)
  * @param {string} props.apiBaseUrl - Base URL for the API (optional, defaults to localhost:8000)
  */
-const Microphonebutton = ({ selectedLang, onResponse, apiBaseUrl = import.meta.env.VITE_API_URL || "https://sanhri-test-1.onrender.com" }) => {
+const Microphonebutton = ({ selectedLang, onResponse, apiBaseUrl = import.meta.env.VITE_API_URL || "http://localhost:8000" }) => {
     const buttonText = {
         English: "Press here to talk",
         हिंदी: "बोलने के लिए यहाँ दबाएँ",
